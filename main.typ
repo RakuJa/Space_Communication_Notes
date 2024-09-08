@@ -124,24 +124,24 @@ Power gain & power losses are linear equation, so you can just sum or subtract i
   - ITU-WTC: (World Radiocommunication conference) is a conference held every 3/4 years by ITU to review radio regulations.
 == Rest of the globe
 - Europe:
-  - ETSI;
-  - CENELEC;
-  - EBU.
+  - ETSI: (European Telecommunications Standards Institute) leading standardization organization for Information and Communication Technology (ICT). Initially intended for Europe, now operates on a global scale;
+  - CENELEC: (Committee for Electrotechnical Standardisation) standardization in the electrotechnical engineering fields;
+  - EBU: (European Brodcasting Union).
 - Italy:
   - Ministero delle imprese.
 - USA:
-  - FCC.
+  - FCC (Federal Communications Commission).
 - Other:
-  - IEEE;
-  - IEEE/SA;
-  - 3GPP;
-  - DVB/DUBS2.
+  - IEEE (Institute of Electrical and Electronics Engineers);
+  - IEEE/SA (IEEE/Standars Association);
+  - 3GPP (3rd Generation Partnership Project) Responsable for 2G, 3G, 4G, 5G;
+  - DVB/DUBS2 (Digital Video Broadcasting).
 - Space:
-  - UNOOSA;
-  - ECSS;
-  - SFCG;
-  - CCDS;
-  - IDSIS;
+  - UNOOSA (United Nations Office for Outer Space Affairs) Promotes international cooperation in the peaceful use and exploration of space, and in the utilisation of space science and technology for sustainable economic and social development;
+  - ECSS (European Cooperation for Space Standardization) ;
+  - SFCG (Space Frequency Coordination Group) Deals with frequency management issues relevant to the activity of the various space agencies. It was established in order to provide a less formal and more flexible environment, as compared to the official organs of the ITU;
+  - CCDS (Consultative Committee for Space Data Systems) multi-national forum for the development of communications & data systems standards for spaceflight;
+  - IDSIS (International Deep Space Interoperability Standards) is a partnership among all the agencies involved in ISS operations: NASA, Roscosmos, JAXA, ESA, CSA.
 
 = Earth Atmosphere
 
@@ -154,7 +154,7 @@ Power gain & power losses are linear equation, so you can just sum or subtract i
 
     O#sub[2] is almost constant meaning that we can predict it. It interferes with noticable spikes at 60 & 120 Ghz.
 
-    H#sub[2]O ubterferes with spikes at 22 & 180 Ghz, but its also highly variable. Water at certain frequencies is eager to capture electron to complete its structure, attenuating the signal.
+    H#sub[2]O interferes with spikes at 22 & 180 Ghz, but its also highly variable. Water at certain frequencies is eager to capture electron to complete its structure, attenuating the signal.
 
     Refractive index is relative low after 20km and it measures the slow down of electromagnetic waves. 
 
@@ -234,7 +234,7 @@ Beamwidth is the width of the beam , it determines how precise the accuracy must
 The antenna effective area is the measure of how effective an antenna is at collecting the power of electromagnetic radiation. The antenna area is smaller than the physical area $ A#sub[e] = η A#sub[p] $ with η being the efficiency factor and η < 1.
 
 If a signal enters the dish and hits the edge, it may scatter and create interference.  
-Many practical antennas have circular aperture #sym.arrow.r $ A#sub[p] = (pi⌀^2)/4; A#sub[e]=η((pi⌀^2)/4); G#sub[max] = η((pi⌀^2)/λ)^2$
+Many practical antennas have circular aperture #sym.arrow.r $ A#sub[p] = (pi⌀^2)/4; A#sub[e]=η((pi⌀^2)/4); G#sub[max] = η((pi⌀)/λ)^2$
 
 == Dipoles
 
@@ -375,7 +375,7 @@ T#sub[eq] = Equivalent Noise Temperature: The temperature that "represents the a
 
 Noise figure of the amplifier: $F(T#sub[A]) = 1+ (N#sub[o], "int")/(K*T#sub[A])$.
 
-Noise figure at room temperature (290K): $F(T#sub[o]) = 1+(T#sub[eq])/T#sub[o].$
+Noise figure at room temperature (290K): $F(T#sub[o]) = 1+(T#sub[eq])/(T#sub[o]).$
 
 T#sub[eq] can be approximated to: $T#sub[eq] = (F-1) * T#sub[o] = 10^(x/10) -1 * 290k.$
 
@@ -390,8 +390,8 @@ T#sub[eq] can be approximated to: $T#sub[eq] = (F-1) * T#sub[o] = 10^(x/10) -1 *
 - Atmosphere: We have differences between clear sky and rain, but we can approximate to $260k < T#sub[m] < 280k => ~275k. $ With clear sky we consider MWGN & CMBR. With rain we consider *only* losses caused by rain. After 10 Ghz noise from atmosphere gasses is dominant, with oxygen noise peaks at 22Ghz and 60Ghz. The cosmic noises like microwave background radiation is prevalent outside 1-15Ghz. If we increase elevation angle we reduce sky noise ex max = 0°, min = 90°;
 - Ground noise: with elevation > 10° => 45-50k, for negative elevation 290k.
 
-$ "SNR"#super[Clear] = P#sub[s]#super[Clear]/(k(T#sub[CMBR] + T#sub[MWGN])B) $
-$ "SNR"#super[Rain] = P#sub[s]#super[Clear]/(L#sub[Rain]*k*T#sub[m]*B) $
+$ "SNR"#super[Clear] = (P#sub[s]#super[Clear])/(k(T#sub[CMBR] + T#sub[MWGN])B) $
+$ "SNR"#super[Rain] = (P#sub[s]#super[Clear])/(L#sub[Rain]*k*T#sub[m]*B) $
 
 Rainfall noise is relevant > 4 Ghz and reaches 100k near 15Ghz.
 Below 1Ghz cosmic noise.
@@ -432,7 +432,7 @@ We can compress a lot, trading off quality vs data rate. For example \~= 20Khz i
 == Modulation 
 Before sending a signal we need to go from base band to RF band. Modulation does this operation. It shifts from low frequencies to high. Reasons for modulating: an antenna may only operate in high frequencies.
 
-Analog modulation: easty to demodulate, requires more power, used for AM radio.
+Analog modulation: easy to demodulate, requires more power, used for AM radio.
 
 Technologies for high power amplifiers include:
 - TWTAS (Traveling-wave tube amplifiers ) based on waveguide;
@@ -509,9 +509,9 @@ When we transmit bits we may have a lot of noise that, when sampling the signal,
 Error detection is the process of detecting errors, Error Correcting is the process of fixing errors. When using these techniques we add information to the transmission and as such we have more bits to send.
 
 == Error detection codes
-Transmission with only error detection are ARQ (automatic repeat request) and will check for errors and ask to resend the package if errors are found. The simplest form of EDC is parity check: we add a parity bit that is 1 if the number of 1/0 (to decide in the protocol which one) are odds. 0 otherwise. Parity check detects only odd number of bit flips, if the bit flips are even then it will fail and be unable to detect errors. 7 bit + 1 parity = 8 bit = 1 byte.
+Transmission with only error detection are ARQ (automatic repeat request) and will check for errors and ask to resend the package if errors are found. The simplest form of EDC is parity check: we add a parity bit that is 1 if the number of 1/0 (to decide in the protocol which one) are odds. 0 otherwise. Parity check detects only odd number of bit flips, if the bit flips are even then it will fail and be unable to detect errors. 7 bit + 1 parity = 8 bit = 1 byte. 
 
-The CRC is a better EDC, contains more redundant info to be able to suffer more noise.
+The CRC is a better EDC, contains more redundant info to be able to suffer more noise. With _N_ as the total length of the packet and _k_ as the original packet at transmitter, we have $n=N-k$ check bits
 
 == Error correcting codes
 These types of codes use FEC (forward error correcting), this means that they have all the information to automatically correct errors without requesting anything back. This is a must have in space communication systems in which the time to send each package is a burden and would overwhelm buffers (While waiting for a ARQ response, all the received packages need to be stored).
